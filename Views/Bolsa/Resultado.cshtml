@@ -1,0 +1,48 @@
+@model bolsaApp.Models.OperacionBolsa
+
+<h2>Resultado de la Operación</h2>
+
+<p>Nombre: @Model.Nombre</p>
+<p>Correo: @Model.Correo</p>
+<p>Fecha de Operación: @Model.FechaOperacion.ToShortDateString()</p>
+
+<h3>Instrumentos Seleccionados</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Instrumento</th>
+            <th>IGV (18%)</th>
+            <th>Monto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.SP500)
+        {
+            <tr>
+                <td>S&P 500</td>
+                <td>@(500 * 0.18m)</td>
+                <td>500</td>
+            </tr>
+        }
+        @if (Model.DowJones)
+        {
+            <tr>
+                <td>Dow Jones</td>
+                <td>@(300 * 0.18m)</td>
+                <td>300</td>
+            </tr>
+        }
+        @if (Model.BonosUS)
+        {
+            <tr>
+                <td>Bonos US</td>
+                <td>@(120 * 0.18m)</td>
+                <td>120</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>IGV Total: @Model.IGV</p>
+<p>Comisión: @Model.Comision</p>
+<p>Total a Pagar: @Model.Total</p>

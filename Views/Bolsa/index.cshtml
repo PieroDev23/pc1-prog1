@@ -1,0 +1,32 @@
+@model bolsaApp.Models.OperacionBolsa
+
+<h2>Operar en la bolsa</h2>
+
+<form asp-action="Index" method="post">
+    <label>Nombre y Apellido:</label>
+    <input asp-for="Nombre" type="text" />
+    <br />
+
+    <label>Correo electrónico:</label>
+    <input asp-for="Correo" type="text" />
+    <br />
+
+    <label>Fecha de Operación:</label>
+    <input asp-for="FechaOperacion" type="date" />
+    <br />
+
+    <label>Instrumentos:</label>
+    <br />
+    <input asp-for="SP500" type="checkbox" /> S&P 500 ($500)
+    <br />
+    <input asp-for="DowJones" type="checkbox" /> Dow Jones ($300)
+    <br />
+    <input asp-for="BonosUS" type="checkbox" /> Bonos US ($120)
+    <br />
+
+    <label>Monto Abonar:</label>
+    <input asp-for="MontoAbonar" type="number" />
+    <br />
+
+    <button type="submit">Invertir</button>
+</form>
